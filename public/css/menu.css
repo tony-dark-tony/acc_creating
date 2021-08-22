@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+body{
+    background-color: #f7f7f7;
+}
+.logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+.logo > i{
+    margin-right: 15px;
+    font-size: 35px;
+    color: #EAEAEA
+}
+.logo > h3{
+    color: #EAEAEA;
+    font-size: 24px;
+    font-weight:lighter;
+}
+.navbar{
+    width: 250px;
+    height: 100vh;
+    background-color: #2A3F54;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.menu{
+    margin-top: 15px;
+    text-decoration: none;
+    list-style: none;
+    font-size: smaller;
+}
+.menu > li > a{
+    display: flex;
+    height:45px;
+    color: #EAEAEA;
+    align-items: center;
+    padding-left: 10px;
+    text-decoration: none;
+}
+.menu > li:hover > a{
+    background-color: #73879C;
+    border-right: 5px solid #20c997;
+}
+.menu > li > a > i{
+    margin-right: 5px;
+}
+.active{
+    background-color: #73879C;
+    border-right: 5px solid #20c997;
+}
+.header{
+    width: calc(100vw - 250px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    height:50px;
+    background-color: #EDEDED;
+    z-index: -1;
+    line-height: 50px;
+}
+.header > p{
+    float: right;
+    margin-right:10px;
+}
+.date{
+    color: #73879C;
+    font-size: smaller;
+}
+.container{
+    min-height: calc(100vh - 100px);
+    width: calc(100vw - 300px);
+    z-index: -2;
+    background-color: #fff;
+    position: absolute;
+    right: 25px;
+    top: 75px;
+}
+.container > h1{
+    margin: 25px;
+    color: #73879C;
+}
+.line_break{
+    width:calc(100vw - 350px);
+    margin: auto;
+    background-color: #2A3F54;
+    height:2px; 
+}
+.btn_wrap{
+    display: flex;
+    margin: 20px;
+}
+.btn_wrap > a{
+    height:50px;
+    line-height:50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #007bff;
+    border-radius: 5px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #EAEAEA;
+}

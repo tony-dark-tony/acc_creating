@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="./css/menu.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js"></script>
+<div class="navbar">
+    <div class="logo">
+        <i class="fas fa-users-cog"></i>
+        <h3>MANAGER</h3>
+    </div>
+    <ul class="menu">
+        <li class="<%if (active == 1){%>active<%}%>"">
+            <a href="/manage_user">
+                <i class=" fas fa-users"></i>
+                <p>Manager Users</p>
+            </a>
+        </li>
+        <li class="<%if (active == 2){%>active<%}%>"">
+            <a href="/manage_account">
+                <i class=" fas fa-luggage-cart"></i>
+                <p>Manager Account Office 365</p>
+            </a>
+        </li>
+        <li class="<%if (active == 3){%>active<%}%>"">
+            <a href="/token">
+                <i class=" fas fa-users"></i>
+                <p>Token Create Account</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <i class="fas fa-users"></i>
+                <p>Change Password</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <i class="fas fa-sign-out-alt"></i>
+                <p>Log Out</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="header">
+    <p class="date"></p>
+</div>
