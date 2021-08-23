@@ -134,14 +134,3 @@ body {
 .icon{
   text-align: center;
 }
-.pop-up{
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 1);
-  z-index: 90;
-}
-.panel{
-  height: 90vh;
-  width: 40vw;
-  margin: auto;
-}

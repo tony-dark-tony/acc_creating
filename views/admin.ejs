@@ -1,124 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager</title>
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
+
 <body>
- <%- include("components/menu.ejs")%>
- <div class="container">
-    <h1>Data Reseller</h1>
-    <div class="line_break"></div>
-    <div class="btn_wrap">
-        <a href="">Add User</a>
-        <a href="">B</a>
-        <a href="">C</a>
-    </div>
-    <div class="display_wrap">
-        <div class="limit">
-            Select&nbsp;
-            <select name="entries" id=""limit>
-                <option value="50">50</option>
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="100">100</option>
-            </select>
-            &nbsp;entries
+    <%- include("components/menu.ejs")%>
+        <div class="container">
+            <h1>Data Reseller</h1>
+            <div class="line_break"></div>
+            <div class="btn_wrap">
+                <button onclick="add_reseller();">Add User</button>
+            </div>
+            <div class="display_wrap">
+                <div class="limit">
+                    Select&nbsp;
+                    <select name="entries" id="" limit>
+                        <option value="50">50</option>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="100">100</option>
+                    </select>
+                    &nbsp;entries
+                </div>
+                <div class="search">
+                    Search: &nbsp;
+                    <div class="search_bar">
+                        <input type="text" class="input_search">
+                        <span class="clear" onclick='$(".input_search").val("")'><i class="fas fa-times"
+                                onclick="clear()"></i></span>
+                    </div>
+                </div>
+            </div>
+            <table class="data">
+                <tr>
+                    <th>ID</th>
+                    <th>Parent User</th>
+                    <th>User Name</th>
+                    <th>Count/Total</th>
+                    <th>Domain</th>
+                    <th>License</th>
+                    <th>Time</th>
+                    <th>Del</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Tony</td>
+                    <td onclick="update_reseller()">Parker</td>
+                    <td>10/200</td>
+                    <td class="cfg_comain" onclick="cfg_domain()">Config Domain</td>
+                    <td class="cfg_license" onclick="cfg_license()">Config License</td>
+                    <td>22/08/2021 09:03</td>
+                    <td class="icon"><i class="far fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Tony</td>
+                    <td onclick="update_reseller()">Parker</td>
+                    <td>10/200</td>
+                    <td class="cfg_comain" onclick="cfg_domain()">Config Domain</td>
+                    <td class="cfg_license" onclick="cfg_license()">Config License</td>
+                    <td>22/08/2021 09:03</td>
+                    <td class="icon"><i class="far fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Tony</td>
+                    <td onclick="update_reseller()">Parker</td>
+                    <td>10/200</td>
+                    <td class="cfg_comain" onclick="cfg_domain()">Config Domain</td>
+                    <td class="cfg_license" onclick="cfg_license()">Config License</td>
+                    <td>22/08/2021 09:03</td>
+                    <td class="icon"><i class="far fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Tony</td>
+                    <td onclick="update_reseller()">Parker</td>
+                    <td>10/200</td>
+                    <td class="cfg_comain" onclick="cfg_domain()">Config Domain</td>
+                    <td class="cfg_license" onclick="cfg_license()">Config License</td>
+                    <td>22/08/2021 09:03</td>
+                    <td class="icon"><i class="far fa-trash-alt"></i></td>
+                </tr>
+            </table>
         </div>
-        <div class="search">
-            Search: &nbsp;
-            <div class="search_bar">
-                <input type="text" class="input_search">
-                <span class="clear" onclick='$(".input_search").val("")'><i class="fas fa-times" onclick="clear()"></i></span>
+        <div class="modal fade" id="add_reseller" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Reseller</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="firstname">First Name:</label>
+                                <input type="text" class="form-control" id="firstname">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Last Name:</label>
+                                <input type="text" class="form-control" id="lastname">
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" class="form-control" id="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="text" class="form-control" id="password">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="text" class="form-control" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="roles">Roles:</label>
+                                <select class="form-control" id="roles">
+                                    <option value="">Select</option>
+                                    <option value="bulk">Resell Bulk</option>
+                                    <option value="retail">Resell Retail</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="count">Count Account 365:</label>
+                                <input type="text" class="form-control" id="count">
+                            </div>
+                            <div class="form-group">
+                                <label for="total">Total Account 365:</label>
+                                <input type="text" class="form-control" id="total">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <table class="data">
-        <tr>
-            <th>ID</th>
-            <th>Parent User</th>
-            <th>User Name</th>
-            <th>Count/Total</th>
-            <th>Domain</th>
-            <th>License</th>
-            <th>Time</th>
-            <th>Del</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Tony</td>
-            <td>Parker</td>
-            <td>10/200</td>
-            <td class="cfg_comain">Config Domain</td>
-            <td class="cfg_license">Config License</td>
-            <td>22/08/2021 09:03</td>
-            <td class="icon"><i class="far fa-trash-alt"></i></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Tony</td>
-            <td>Parker</td>
-            <td>10/200</td>
-            <td class="cfg_comain">Config Domain</td>
-            <td class="cfg_license">Config License</td>
-            <td>22/08/2021 09:03</td>
-            <td class="icon"><i class="far fa-trash-alt"></i></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Tony</td>
-            <td>Parker</td>
-            <td>10/200</td>
-            <td class="cfg_comain">Config Domain</td>
-            <td class="cfg_license">Config License</td>
-            <td>22/08/2021 09:03</td>
-            <td class="icon"><i class="far fa-trash-alt"></i></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Tony</td>
-            <td>Parker</td>
-            <td>10/200</td>
-            <td class="cfg_comain">Config Domain</td>
-            <td class="cfg_license">Config License</td>
-            <td>22/08/2021 09:03</td>
-            <td class="icon"><i class="far fa-trash-alt"></i></td>
-        </tr>
-    </table>
- </div>
- <!-- <div class="pop-up add_reseller">
-     <div class="panel">
-         <h3>Add Reseller</h3>
-         <form action="">
-             <label for="first_name">First Name</label>
-             <input type="text" name="first_name">
-             <label for="last_name">Last Name</label>
-             <input type="text" name="last_name">
-             <label for="username">User Name</label>
-             <input type="text" name="username">
-             <label for="password" >Password</label>
-             <input type="text" name="password">
-             <label for="email">Email</label>
-             <input type="text"name="email">
-             <select name="role" id="role_sel">
-                 <option value="None">Select</option>
-                 <option value="bulk">Resell Bulk</option>
-                 <option value="retail">Resell Retail</option>
-             </select>
-             <label for="count">Count Account 365</label>
-             <input type="text" name="count">
-             <label for="total">Total Account 365</label>
-             <input type="text"name="total">
-         </form>
-         <div class="btn_control">
-             <button class="close">Close</button>
-             <button class="add">Add</button>
-         </div>
-     </div>
- </div> -->
+        <div class="modal fade" id="update_reseller" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Reseller</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="update_firstname">First Name:</label>
+                                <input type="text" class="form-control" id="update_firstname">
+                            </div>
+                            <div class="form-group">
+                                <label for="update_lastname">Last Name:</label>
+                                <input type="text" class="form-control" id="update_lastname">
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" class="form-control" id="username" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="update_password">Password:</label>
+                                <input type="text" class="form-control" id="update_password">
+                            </div>
+                            <div class="form-group">
+                                <label for="update_email">Email:</label>
+                                <input type="text" class="form-control" id="update_email">
+                            </div>
+                            <div class="form-group">
+                                <label for="update_roles">Roles:</label>
+                                <select class="form-control" id="update_roles">
+                                    <option value="">Select</option>
+                                    <option value="bulk">Resell Bulk</option>
+                                    <option value="retail">Resell Retail</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="update_count">Count Account 365:</label>
+                                <input type="text" class="form-control" id="update_count">
+                            </div>
+                            <div class="form-group">
+                                <label for="update_total">Total Account 365:</label>
+                                <input type="text" class="form-control" id="update_total">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="cfg_license" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Setting License Office 365</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" class="form-control" id="username" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="domains_license">Domains:</label>
+                                <select class="form-control" id="domains_license">
+                                    <option value="">Select</option>
+                                    <option value="mcpyu.cf">mcpyu.cf</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="domains">License Office 365:</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="licenses">
+                                    <label class="form-check-label" for="licenses">
+                                        Office 365 A5 without Audio Conferencing for students use benefit  
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="licenses">
+                                    <label class="form-check-label" for="licenses">
+                                        Office 365 A3 for students use benefit  
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="licenses">
+                                    <label class="form-check-label" for="licenses">
+                                        Office 365 A1 for students  
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="licenses">
+                                    <label class="form-check-label" for="licenses">
+                                        Office 365 A1 for faculty    
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="licenses">
+                                    <label class="form-check-label" for="licenses">
+                                        Microsoft 365 Apps for Students   
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="licenses">
+                                    <label class="form-check-label" for="licenses">
+                                        Microsoft 365 A5 for students use benefit  
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="cfg_domain" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Setting Domain Office 365</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" class="form-control" id="username" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="domains">Domain Office 365:</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="domains">
+                                    <label class="form-check-label" for="domains">
+                                        mcpyu.cf
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="domains">
+                                    <label class="form-check-label" for="domains">
+                                        nxphu.net
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="domains">
+                                    <label class="form-check-label" for="domains">
+                                        taikhoantot.com
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
+
 </html>

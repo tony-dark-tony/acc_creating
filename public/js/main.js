@@ -46,11 +46,23 @@ $(document).ready(() => {
     }else{
       $(".clear").show();
     }
-  })
+  });
 });
 //Send submit form
 function submit() {
   socket.emit("submit", "hi");
+}
+function add_reseller(){
+  $("#add_reseller").modal("show");
+}
+function update_reseller(){
+  $("#update_reseller").modal("show")
+}
+function cfg_domain(){
+  $("#cfg_domain").modal("show");
+}
+function cfg_license(){
+  $("#cfg_license").modal("show");
 }
 socket.on("callback", (data) => {
   alert(data);
