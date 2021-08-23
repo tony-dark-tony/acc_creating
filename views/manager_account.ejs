@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
@@ -14,9 +16,9 @@
             <h1>Data Office 365</h1>
             <div class="line_break"></div>
             <div class="btn_wrap">
-                <a href="">Create Account</a>
-                <a href="">Create Multiple Accounts</a>
-                <a href="">Download Account</a>
+                <button>Create Account</button>
+                <button>Create Multiple Accounts</button>
+                <button>Download Account</button>
             </div>
             <div class="display_wrap">
                 <div class="limit">
@@ -50,7 +52,7 @@
                 </tr>
                 <tr>
                     <td>nguyenphaman19218</td>
-                    <td>rouben56@mcpyu.cf</td>
+                    <td onclick="update_account()">rouben56@mcpyu.cf</td>
                     <td>bdoZukYH</td>
                     <td>Office</td>
                     <td>paid/create</td>
@@ -59,7 +61,7 @@
                 </tr>
                 <tr>
                     <td>nguyenphaman19218</td>
-                    <td>rouben56@mcpyu.cf</td>
+                    <td onclick="update_account()">rouben56@mcpyu.cf</td>
                     <td>bdoZukYH</td>
                     <td>Office</td>
                     <td>paid/create</td>
@@ -68,7 +70,7 @@
                 </tr>
                 <tr>
                     <td>nguyenphaman19218</td>
-                    <td>rouben56@mcpyu.cf</td>
+                    <td onclick="update_account()">rouben56@mcpyu.cf</td>
                     <td>bdoZukYH</td>
                     <td>Office</td>
                     <td>paid/create</td>
@@ -77,7 +79,7 @@
                 </tr>
                 <tr>
                     <td>nguyenphaman19218</td>
-                    <td>rouben56@mcpyu.cf</td>
+                    <td onclick="update_account()">rouben56@mcpyu.cf</td>
                     <td>bdoZukYH</td>
                     <td>Office</td>
                     <td>paid/create</td>
@@ -85,6 +87,90 @@
                     <td class="icon"><i class="far fa-trash-alt"></i></td>
                 </tr>
             </table>
+        </div>
+        <div class="modal fade" id="update_account" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Account</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="id">ID:</label>
+                                <input type="text" class="form-control" id="id">
+                            </div>
+                            <div class="form-group">
+                                <label for="user_create">User Create:</label>
+                                <input type="text" class="form-control" id="user_create">
+                            </div>
+                            <div class="form-group">
+                                <label for="account_firstname">Firstname:</label>
+                                <input type="text" class="form-control" id="account_firstname">
+                            </div>
+                            <div class="form-group">
+                                <label for="account_lastname">Lastname:</label>
+                                <input type="text" class="form-control" id="account_lastname">
+                            </div>
+                            <div class="form-group">
+                                <label for="account_username">Username</label>
+                                <input type="text" class="form-control" id="account_username">
+                            </div>
+                            <div class="form-group">
+                                <label for="recovery_phone">RecoveryPhone:</label>
+                                <input type="text" class="form-control" id="recovery_phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="recovery_phone">RecoveryEmail:</label>
+                                <input type="text" class="form-control" id="recovery_email">
+                            </div>
+                            <div class="form-group">
+                                <label for="register_option">Registration Option:</label>
+                                <input type="text" class="form-control" id="register_option">
+                            </div>
+                            <div class="form-group">
+                                <label for="account_domain">Domain:</label>
+                                <select class="form-control" id="account_domain">
+                                    <option value="">Select</option>
+                                    <option value="a">A</option>
+                                    <option value="b">B</option>
+                                    <option value="c">A</option>
+                                    <option value="b">B</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="account_license">License Office 365:</label>
+                                <select class="form-control" id="account_license">
+                                    <option value="">Select</option>
+                                    <option value="a">A</option>
+                                    <option value="b">B</option>
+                                    <option value="c">A</option>
+                                    <option value="b">B</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="status_domain">StatusDonate:</label>
+                                <select class="form-control" id="status_domain">
+                                    <option value="">Select</option>
+                                    <option value="a">A</option>
+                                    <option value="b">B</option>
+                                    <option value="c">A</option>
+                                    <option value="b">B</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btnConfirm" class="btn btn-info">Confirm Create</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </div>
         </div>
 </body>
 

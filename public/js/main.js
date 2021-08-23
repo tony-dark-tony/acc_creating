@@ -64,6 +64,9 @@ function cfg_domain(){
 function cfg_license(){
   $("#cfg_license").modal("show");
 }
+function update_account(){
+  $("#update_account").modal("show");
+}
 socket.on("callback", (data) => {
   alert(data);
 });
