@@ -5,44 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Office 365</title>
-    <link rel="stylesheet" href="/css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/main.js"></script>
-    
+    <link rel="stylesheet" href="/css/change_pass.css">
 </head>
 <body>
-    <div class="hero">
-        <h2>Sign up for an Office 365 account</h3>
-        <div class="form">
-            <form action="">
-                <div class="items">
-                    <p>First Name*</p>
-                    <input type="text">
-                </div>
-                <div class="items">
-                    <p>Last Name</p>
-                    <input type="text">
-                </div>
-                <div class="items">
-                    <p>Username*</p>
-                    <input type="text">
-                </div>
-                <div class="items">
-                    <p>Recovery Phone*</p>
-                    <input type="text">
-                </div>
-                <div class="items">
-                    <p>Recovery Email*</p>
-                    <input type="text">
-                </div>
-                <div class="items">
-                    <p>Code*</p>
-                    <input type="text">
-                </div>
+    <div class="container">
+        <div class="img"><img src="/img/change_pass.png" alt="change"></div>
+        <div class="change_wrap">
+            <h3>Change Password</h3>
+            <form action="/change_pass" method="post">
+                <label for="username">Username</label>
+                <input type="text" name="username">
+                <label for="old_pass">Old Password</label>
+                <input type="password" name="old_pass">
+                <label for="pass">Password</label>
+                <input type="password" name="password">
+                <label for="confirm_pass">Confirm Password</label>
+                <input type="password" name="confirm_pass">
+                <button class="submit">Change</button>
             </form>
         </div>
-        <button class="submit" onclick="submit()">Submit</button>
     </div>
 </body>
 </html>

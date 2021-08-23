@@ -95,7 +95,8 @@ body{
 }
 .btn_wrap{
     display: flex;
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .btn_wrap > a{
     height:50px;

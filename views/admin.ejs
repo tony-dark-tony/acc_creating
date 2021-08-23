@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager</title>
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
  <%- include("components/menu.ejs")%>
@@ -15,6 +16,107 @@
     <div class="btn_wrap">
         <a href="">Add User</a>
     </div>
+    <div class="display_wrap">
+        <div class="limit">
+            Select&nbsp;
+            <select name="entries" id=""limit>
+                <option value="50">50</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="100">100</option>
+            </select>
+            &nbsp;entries
+        </div>
+        <div class="search">
+            Search: &nbsp;
+            <div class="search_bar">
+                <input type="text" class="input_search">
+                <span class="clear" onclick='$(".input_search").val("")'><i class="fas fa-times" onclick="clear()"></i></span>
+            </div>
+        </div>
+    </div>
+    <table class="data">
+        <tr>
+            <th>ID</th>
+            <th>Parent User</th>
+            <th>User Name</th>
+            <th>Count/Total</th>
+            <th>Domain</th>
+            <th>License</th>
+            <th>Time</th>
+            <th>Del</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Tony</td>
+            <td>Parker</td>
+            <td>10/200</td>
+            <td class="cfg_comain">Config Domain</td>
+            <td class="cfg_license">Config License</td>
+            <td>22/08/2021 09:03</td>
+            <td class="icon"><i class="far fa-trash-alt"></i></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Tony</td>
+            <td>Parker</td>
+            <td>10/200</td>
+            <td class="cfg_comain">Config Domain</td>
+            <td class="cfg_license">Config License</td>
+            <td>22/08/2021 09:03</td>
+            <td class="icon"><i class="far fa-trash-alt"></i></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Tony</td>
+            <td>Parker</td>
+            <td>10/200</td>
+            <td class="cfg_comain">Config Domain</td>
+            <td class="cfg_license">Config License</td>
+            <td>22/08/2021 09:03</td>
+            <td class="icon"><i class="far fa-trash-alt"></i></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Tony</td>
+            <td>Parker</td>
+            <td>10/200</td>
+            <td class="cfg_comain">Config Domain</td>
+            <td class="cfg_license">Config License</td>
+            <td>22/08/2021 09:03</td>
+            <td class="icon"><i class="far fa-trash-alt"></i></td>
+        </tr>
+    </table>
  </div>
+ <!-- <div class="pop-up add_reseller">
+     <div class="panel">
+         <h3>Add Reseller</h3>
+         <form action="">
+             <label for="first_name">First Name</label>
+             <input type="text" name="first_name">
+             <label for="last_name">Last Name</label>
+             <input type="text" name="last_name">
+             <label for="username">User Name</label>
+             <input type="text" name="username">
+             <label for="password" >Password</label>
+             <input type="text" name="password">
+             <label for="email">Email</label>
+             <input type="text"name="email">
+             <select name="role" id="role_sel">
+                 <option value="None">Select</option>
+                 <option value="bulk">Resell Bulk</option>
+                 <option value="retail">Resell Retail</option>
+             </select>
+             <label for="count">Count Account 365</label>
+             <input type="text" name="count">
+             <label for="total">Total Account 365</label>
+             <input type="text"name="total">
+         </form>
+         <div class="btn_control">
+             <button class="close">Close</button>
+             <button class="add">Add</button>
+         </div>
+     </div>
+ </div> -->
 </body>
 </html>

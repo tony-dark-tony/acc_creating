@@ -37,7 +37,18 @@ $(document).ready(() => {
     var now = day + ", " + date+"/"+month+"/"+year+ " " +hours+":"+minutes+":"+second;
     $(".date").text(now)
   }, 1000);
+  //Toggle clear button
+  $(".input_search").on("input", ()=>{
+    value = $(".input_search").val();
+    
+    if (value == ""){
+      $(".clear").hide();
+    }else{
+      $(".clear").show();
+    }
+  })
 });
+//Send submit form
 function submit() {
   socket.emit("submit", "hi");
 }

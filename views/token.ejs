@@ -1,20 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager</title>
 </head>
+
 <body>
     <%- include("components/menu.ejs") %>
-    <div class="container">
-        <h1>Manager Token Create Account Office 365</h1>
-        <div class="line_break"></div>
-        <div class="btn_wrap">
-            <a href="">Create Token</a>
-            <a href="">Disable Create Account Free</a>
+        <div class="container">
+            <h1>Manager Token Create Account Office 365</h1>
+            <div class="line_break"></div>
+            <div class="btn_wrap">
+                <a href="">Create Token</a>
+                <a href="">Disable Create Account Free</a>
+            </div>
+            <div class="display_wrap">
+                <div class="limit">
+                    Select&nbsp;
+                    <select name="entries" id="" limit>
+                        <option value="50">50</option>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="100">100</option>
+                    </select>
+                    &nbsp;entries
+                </div>
+                <div class="search">
+                    Search: &nbsp;
+                    <div class="search_bar">
+                        <input type="text" class="input_search">
+                        <span class="clear" onclick='$(".input_search").val("")'><i class="fas fa-times"
+                                onclick="clear()"></i></span>
+                    </div>
+                </div>
+            </div>
+            <table class="data">
+                <tr>
+                    <th>ID</th>
+                    <th>Token</th>
+                    <th>Count</th>
+                    <th>Total</th>
+                    <th>Time</th>
+                    <th>Del</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>tony</td>
+                    <td>10</td>
+                    <td>100</td>
+                    <td>22/08/2021 09:03</td>
+                    <td class="icon"><i class="far fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>tony</td>
+                    <td>10</td>
+                    <td>100</td>
+                    <td>22/08/2021 09:03</td>
+                    <td class="icon"><i class="far fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>tony</td>
+                    <td>10</td>
+                    <td>100</td>
+                    <td>22/08/2021 09:03</td>
+                    <td class="icon"><i class="far fa-trash-alt"></i></td>
+                </tr>
+            </table>
         </div>
-     </div>
+
 </body>
+
 </html>

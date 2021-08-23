@@ -1,21 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager</title>
 </head>
+
 <body>
     <%- include("components/menu.ejs") %>
-    <div class="container">
-        <h1>Data Office 365</h1>
-        <div class="line_break"></div>
-        <div class="btn_wrap">
-            <a href="">Create Account</a>
-            <a href="">Create Multiple Accounts</a>
-            <a href="">Download Account</a>
+        <div class="container">
+            <h1>Data Office 365</h1>
+            <div class="line_break"></div>
+            <div class="btn_wrap">
+                <a href="">Create Account</a>
+                <a href="">Create Multiple Accounts</a>
+                <a href="">Download Account</a>
+            </div>
+            <div class="display_wrap">
+                <div class="limit">
+                    Select&nbsp;
+                    <select name="entries" id="" limit>
+                        <option value="50">50</option>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="100">100</option>
+                    </select>
+                    &nbsp;entries
+                </div>
+                <div class="search">
+                    Search: &nbsp;
+                    <div class="search_bar">
+                        <input type="text" class="input_search">
+                        <span class="clear" onclick='$(".input_search").val("")'><i class="fas fa-times"
+                                onclick="clear()"></i></span>
+                    </div>
+                </div>
+            </div>
+            <table class="data">
+                <tr>
+                    <th>User Create</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Registration</th>
+                    <th>Status</th>
+                    <th>Time</th>
+                    <th>Del</th>
+                </tr>
+                <tr>
+                    <td>nguyenphaman19218</td>
+                    <td>rouben56@mcpyu.cf</td>
+                    <td>bdoZukYH</td>
+                    <td>Office</td>
+                    <td>paid/create</td>
+                    <td>21/08/2021 15:07</td>
+                    <td class="icon"><i class="far fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td>nguyenphaman19218</td>
+                    <td>rouben56@mcpyu.cf</td>
+                    <td>bdoZukYH</td>
+                    <td>Office</td>
+                    <td>paid/create</td>
+                    <td>21/08/2021 15:07</td>
+                    <td class="icon"><i class="far fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td>nguyenphaman19218</td>
+                    <td>rouben56@mcpyu.cf</td>
+                    <td>bdoZukYH</td>
+                    <td>Office</td>
+                    <td>paid/create</td>
+                    <td>21/08/2021 15:07</td>
+                    <td class="icon"><i class="far fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td>nguyenphaman19218</td>
+                    <td>rouben56@mcpyu.cf</td>
+                    <td>bdoZukYH</td>
+                    <td>Office</td>
+                    <td>paid/create</td>
+                    <td>21/08/2021 15:07</td>
+                    <td class="icon"><i class="far fa-trash-alt"></i></td>
+                </tr>
+            </table>
         </div>
-     </div>
 </body>
+
 </html>

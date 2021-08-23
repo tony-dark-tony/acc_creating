@@ -27,6 +27,9 @@ app.get('/token', (req, res)=>{
     res.render('token', {
         active: 3
     })
+});
+app.get('/change_pass', (req, res) => {
+    res.render('change_pass')
 })
 io.on('connection', (socket) => {
     socket.on("submit", (data)=>{
