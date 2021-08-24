@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <title>Document</title>
 </head>
 
@@ -14,8 +17,8 @@
             <h1>Manager Token Create Account Office 365</h1>
             <div class="line_break"></div>
             <div class="btn_wrap">
-                <a href="">Create Token</a>
-                <a href="">Disable Create Account Free</a>
+                <button onclick="create_token();">Create Token</button>
+                <button>Disable Create Account Free</button>
             </div>
             <div class="display_wrap">
                 <div class="limit">
@@ -48,7 +51,7 @@
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>tony</td>
+                    <td onclick="confirm_token();">tony</td>
                     <td>10</td>
                     <td>100</td>
                     <td>22/08/2021 09:03</td>
@@ -56,7 +59,7 @@
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>tony</td>
+                    <td onclick="confirm_token();">tony</td>
                     <td>10</td>
                     <td>100</td>
                     <td>22/08/2021 09:03</td>
@@ -64,7 +67,7 @@
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>tony</td>
+                    <td onclick="confirm_token();">tony</td>
                     <td>10</td>
                     <td>100</td>
                     <td>22/08/2021 09:03</td>
@@ -72,7 +75,103 @@
                 </tr>
             </table>
         </div>
-
+        <div class="modal fade" id="confirm_token" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Confirm Token Create Account</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form accept-charset="utf-8" id="formUpdate" novalidate="novalidate">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label class="col-form-label">ID:</label>
+                                    <input type="text" class="form-control valid" name="Id" id="confirm-token-id" readonly="" required="" aria-invalid="false">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Token:</label>
+                                    <input type="text" class="form-control valid" name="Token" id="confirm-token-token" readonly="" required="" aria-invalid="false">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Count:</label>
+                                    <input type="number" class="form-control" name="Count" id="confirm-token-count" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Total:</label>
+                                    <input type="number" class="form-control" name="Total" id="confirm-token-total" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Domain:</label>
+                                    <select name="Domain" id="confirm-token-domain" class="form-control" required="">
+                                        <option value="">Select</option>
+                                            <option value="mcpyu.cf">mcpyu.cf</option>
+                                            <option value="nxphu.net">nxphu.net</option>
+                                            <option value="taikhoantot.com">taikhoantot.com</option>
+                                            <option value="stopwork23.tk">stopwork23.tk</option>
+                                            <option value="a4k30thcscva.me">a4k30thcscva.me</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" id="URegOption">
+                                    <label class="col-form-label">License Office 365:</label>
+                                    <select name="Sku" id="confirm-token-sku" class="form-control" required=""><option value="">Select</option><option value="bc86c9cd-3058-43ba-9972-141678675ac1">Office 365 A5 without Audio Conferencing for students use benefit</option><option value="476aad1e-7a7f-473c-9d20-35665a5cbd4f">Office 365 A3 for students use benefit</option><option value="314c4481-f395-4525-be8b-2ec4bb1e9d91">Office 365 A1 for students</option><option value="94763226-9b3c-4e75-a931-5c89701abe66">Office 365 A1 for faculty</option><option value="c32f9321-a627-406d-a114-1f9c81aaafac">Microsoft 365 Apps for Students</option><option value="31d57bc7-3a05-4867-ab53-97a17835a411">Microsoft 365 A5 for students use benefit</option><option value="18250162-5d87-4436-a834-d795c15c80f3">Microsoft 365 A3 for students use benefit</option></select>
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="btnUpdate" class="btn btn-info">Update Token</button>
+                        <button type="button" id="btnUpdateClose" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="create_token" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Confirm Token Create Account</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="col-form-label">Token:</label>
+                            <input type="text" class="form-control" name="Token" id="create-token-token" required="">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Total:</label>
+                            <input type="text" class="form-control" name="Total" id="create-token-total" required="">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Domain:</label>
+                            <select name="Domain" id="create-token-domain" class="form-control" required="">
+                                <option value="">Select</option>
+                                    <option value="mcpyu.cf">mcpyu.cf</option>
+                                    <option value="nxphu.net">nxphu.net</option>
+                                    <option value="taikhoantot.com">taikhoantot.com</option>
+                                    <option value="stopwork23.tk">stopwork23.tk</option>
+                                    <option value="a4k30thcscva.me">a4k30thcscva.me</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">License Office 365:</label>
+                            <select name="Sku" id="create-token-sku" class="form-control"><option value="">Select</option></select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="btnUpdate" class="btn btn-info">Update Token</button>
+                        <button type="button" id="btnUpdateClose" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>

@@ -106,46 +106,46 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="firstname">First Name:</label>
-                                <input type="text" class="form-control" id="firstname">
+                                <label for="add-reseller-firstname">First Name:</label>
+                                <input type="text" class="form-control" id="add-reseller-firstname">
                             </div>
                             <div class="form-group">
-                                <label for="lastname">Last Name:</label>
-                                <input type="text" class="form-control" id="lastname">
+                                <label for="add-reseller-lastname">Last Name:</label>
+                                <input type="text" class="form-control" id="add-reseller-lastname">
                             </div>
                             <div class="form-group">
-                                <label for="username">Username:</label>
-                                <input type="text" class="form-control" id="username">
+                                <label for="add-reseller-username">Username:</label>
+                                <input type="text" class="form-control" id="add-reseller-username">
                             </div>
                             <div class="form-group">
-                                <label for="password">Password:</label>
-                                <input type="text" class="form-control" id="password">
+                                <label for="add-reseller-password">Password:</label>
+                                <input type="text" class="form-control" id="add-reseller-password">
                             </div>
                             <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input type="text" class="form-control" id="email">
+                                <label for="add-reseller-email">Email:</label>
+                                <input type="text" class="form-control" id="add-reseller-email">
                             </div>
                             <div class="form-group">
-                                <label for="roles">Roles:</label>
-                                <select class="form-control" id="roles">
+                                <label for="add-reseller-roles">Roles:</label>
+                                <select class="form-control" id="add-reseller-roles">
                                     <option value="">Select</option>
                                     <option value="bulk">Resell Bulk</option>
                                     <option value="retail">Resell Retail</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="count">Count Account 365:</label>
-                                <input type="text" class="form-control" id="count">
+                                <label for="add-reseller-count">Count Account 365:</label>
+                                <input type="text" class="form-control" id="add-reseller-count">
                             </div>
                             <div class="form-group">
-                                <label for="total">Total Account 365:</label>
-                                <input type="text" class="form-control" id="total">
+                                <label for="add-reseller-total">Total Account 365:</label>
+                                <input type="text" class="form-control" id="add-reseller-total">
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Add</button>
+                        <button type="button" class="btn btn-primary" onclick="submit_add_reseller();">Add</button>
                     </div>
                 </div>
             </div>
@@ -163,40 +163,40 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="update_firstname">First Name:</label>
-                                <input type="text" class="form-control" id="update_firstname">
+                                <label for="update-reseller-firstname">First Name:</label>
+                                <input type="text" class="form-control" id="update-reseller-firstname">
                             </div>
                             <div class="form-group">
-                                <label for="update_lastname">Last Name:</label>
-                                <input type="text" class="form-control" id="update_lastname">
+                                <label for="update-reseller-lastname">Last Name:</label>
+                                <input type="text" class="form-control" id="update-reseller-lastname">
                             </div>
                             <div class="form-group">
-                                <label for="username">Username:</label>
-                                <input type="text" class="form-control" id="username" readonly>
+                                <label for="update-reseller-username">Username:</label>
+                                <input type="text" class="form-control" id="update-reseller-username" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="update_password">Password:</label>
-                                <input type="text" class="form-control" id="update_password">
+                                <label for="update-reseller-password">Password:</label>
+                                <input type="text" class="form-control" id="update-reseller-password">
                             </div>
                             <div class="form-group">
-                                <label for="update_email">Email:</label>
-                                <input type="text" class="form-control" id="update_email">
+                                <label for="update-reseller-email">Email:</label>
+                                <input type="text" class="form-control" id="update-reseller-email">
                             </div>
                             <div class="form-group">
-                                <label for="update_roles">Roles:</label>
-                                <select class="form-control" id="update_roles">
+                                <label for="update-reseller-roles">Roles:</label>
+                                <select class="form-control" id="update-reseller-roles">
                                     <option value="">Select</option>
                                     <option value="bulk">Resell Bulk</option>
                                     <option value="retail">Resell Retail</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="update_count">Count Account 365:</label>
-                                <input type="text" class="form-control" id="update_count">
+                                <label for="update-reseller-count">Count Account 365:</label>
+                                <input type="text" class="form-control" id="update-reseller-count">
                             </div>
                             <div class="form-group">
-                                <label for="update_total">Total Account 365:</label>
-                                <input type="text" class="form-control" id="update_total">
+                                <label for="update-reseller-total">Total Account 365:</label>
+                                <input type="text" class="form-control" id="update-reseller-total">
                             </div>
                         </form>
                     </div>
@@ -220,51 +220,51 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="username">Username:</label>
-                                <input type="text" class="form-control" id="username" readonly>
+                                <label for="cfg-license-username">Username:</label>
+                                <input type="text" class="form-control" id="cfg-license-username" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="domains_license">Domains:</label>
-                                <select class="form-control" id="domains_license">
+                                <label for="cfg-license-domains">Domains:</label>
+                                <select class="form-control" id="cfg-license-domains">
                                     <option value="">Select</option>
                                     <option value="mcpyu.cf">mcpyu.cf</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="domains">License Office 365:</label>
+                                <label>License Office 365:</label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="licenses">
-                                    <label class="form-check-label" for="licenses">
+                                    <input class="form-check-input" type="checkbox" value="" id="cfg-license-licenses">
+                                    <label class="form-check-label" for="cfg-license-licenses">
                                         Office 365 A5 without Audio Conferencing for students use benefit  
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="licenses">
-                                    <label class="form-check-label" for="licenses">
+                                    <input class="form-check-input" type="checkbox" value="" id="cfg-license-licenses">
+                                    <label class="form-check-label" for="cfg-license-licenses">
                                         Office 365 A3 for students use benefit  
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="licenses">
-                                    <label class="form-check-label" for="licenses">
+                                    <input class="form-check-input" type="checkbox" value="" id="cfg-license-licenses">
+                                    <label class="form-check-label" for="cfg-license-licenses">
                                         Office 365 A1 for students  
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="licenses">
-                                    <label class="form-check-label" for="licenses">
+                                    <input class="form-check-input" type="checkbox" value="" id="cfg-license-licenses">
+                                    <label class="form-check-label" for="cfg-license-licenses">
                                         Office 365 A1 for faculty    
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="licenses">
-                                    <label class="form-check-label" for="licenses">
+                                    <input class="form-check-input" type="checkbox" value="" id="cfg-license-licenses">
+                                    <label class="form-check-label" for="cfg-license-licenses">
                                         Microsoft 365 Apps for Students   
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="licenses">
-                                    <label class="form-check-label" for="licenses">
+                                    <input class="form-check-input" type="checkbox" value="" id="cfg-license-licenses">
+                                    <label class="form-check-label" for="cfg-license-licenses">
                                         Microsoft 365 A5 for students use benefit  
                                     </label>
                                 </div>
@@ -277,7 +277,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>x`
         <div class="modal fade" id="cfg_domain" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -291,11 +291,11 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="username">Username:</label>
-                                <input type="text" class="form-control" id="username" readonly>
+                                <label for="cfg-domain-username">Username:</label>
+                                <input type="text" class="form-control" id="cfg-domain-username" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="domains">Domain Office 365:</label>
+                                <label>Domain Office 365:</label>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="domains">
                                     <label class="form-check-label" for="domains">

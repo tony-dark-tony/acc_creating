@@ -33,7 +33,7 @@ app.get('/change_pass', (req, res) => {
 })
 io.on('connection', (socket) => {
     socket.on("submit", (data)=>{
-        socket.emit("callback", "Hello")
+        console.log(data)
     })
 })
 

@@ -50,22 +50,44 @@ $(document).ready(() => {
 });
 //Send submit form
 function submit() {
-  socket.emit("submit", "hi");
+  data=[
+    firstname = $("#index-firstname").val(),
+    lastname = $("#index-lastname").val(),
+    username = $("#index-username").val(),
+    re_phone = $("#index-recovery-phone").val(),
+    re_mail = $("#index-recovery-email").val(),
+    code = $("#index-code").val(),
+  ];
+  socket.emit("submit", data);
 }
-function add_reseller(){
-  $("#add_reseller").modal("show");
+function submit_add_reseller(){
+  data=[
+    firstname = $("#add-reseller-firstname").val(),
+    lastname = $("#add-reseller-lastname").val(),
+    username = $("#add-reseller-username").val(),
+    password = $("#add-reseller-password").val(),
+    email = $("#add-reseller-email").val(),
+    roles = $("#add-reseller-roles").val(),
+    count = $("#add-reseller-count").val(),
+    total = $("#add-reseller-total").val(),
+  ];
+  socket.emit("add_reseller", data);
 }
-function update_reseller(){
-  $("#update_reseller").modal("show")
+function submit_update_reseller(){
+  data=[
+    firstname = $("#update-reseller-firstname").val(),
+    lastname = $("#update-reseller-lastname").val(),
+    username = $("#update-reseller-username").val(),
+    password = $("#update-reseller-password").val(),
+    email = $("#update-reseller-email").val(),
+    roles = $("#update-reseller-roles").val(),
+    count = $("#update-reseller-count").val(),
+    total = $("#update-reseller-total").val(),
+  ];
+  socket.emit("update_reseller", data);
 }
-function cfg_domain(){
-  $("#cfg_domain").modal("show");
-}
-function cfg_license(){
-  $("#cfg_license").modal("show");
-}
-function update_account(){
-  $("#update_account").modal("show");
+function submit_cfg_license(){
+  
 }
 socket.on("callback", (data) => {
   alert(data);
