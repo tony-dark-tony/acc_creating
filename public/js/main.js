@@ -50,28 +50,38 @@ $(document).ready(() => {
 });
 //Send submit form
 function submit() {
-  data=[
-    firstname = $("#index-firstname").val(),
-    lastname = $("#index-lastname").val(),
-    username = $("#index-username").val(),
-    re_phone = $("#index-recovery-phone").val(),
-    re_mail = $("#index-recovery-email").val(),
-    code = $("#index-code").val(),
-  ];
-  socket.emit("submit", data);
+  data={
+    fname: $("#index-firstname").val(),
+    lname: $("#index-lastname").val(),
+    username:$("#index-username").val(),
+    re_phone:$("#index-recovery-phone").val(),
+    re_mail:$("#index-recovery-email").val(),
+    code:$("#index-code").val(),
+    domainName:"pops4ever.me"
+  };
+  socket.emit("create_account", data);
 }
 function submit_add_reseller(){
-  data=[
-    firstname = $("#add-reseller-firstname").val(),
-    lastname = $("#add-reseller-lastname").val(),
-    username = $("#add-reseller-username").val(),
-    password = $("#add-reseller-password").val(),
-    email = $("#add-reseller-email").val(),
-    roles = $("#add-reseller-roles").val(),
-    count = $("#add-reseller-count").val(),
-    total = $("#add-reseller-total").val(),
-  ];
+  data={
+    firstname: $("#add-reseller-firstname").val(),
+    lastname: $("#add-reseller-lastname").val(),
+    username: $("#add-reseller-username").val(),
+    password: $("#add-reseller-password").val(),
+    email: $("#add-reseller-email").val(),
+    roles: $("#add-reseller-roles").val(),
+    count: $("#add-reseller-count").val(),
+    total: $("#add-reseller-total").val(),
+  };
+  $("#add-reseller-firstname").val("");
+  $("#add-reseller-lastname").val("");
+  $("#add-reseller-email").val("");
+  $("#add-reseller-username").val("");
+  $("#add-reseller-password").val("");
+  $("#add-reseller-roles").val();
+  $("#add-reseller-count").val("");
+  $("#add-reseller-total").val("");
   socket.emit("add_reseller", data);
+  $("#add_reseller").modal("hide");
 }
 function submit_update_reseller(){
   data=[
