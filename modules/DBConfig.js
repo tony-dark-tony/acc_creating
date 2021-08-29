@@ -20,6 +20,14 @@ const Reseller = sequelize.define("Reseller", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  fname: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  lname: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   username: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -50,17 +58,25 @@ const Reseller = sequelize.define("Reseller", {
   },
 });
 const License = sequelize.define("License", {
-  domain: {
+  license: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  license: {
+  domain: {
     type: DataTypes.STRING,
     allowNull: false,
   },
 });
 const Account = sequelize.define("Account", {
-  createUser: {
+  createdUser: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  fname: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  lname: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -76,6 +92,10 @@ const Account = sequelize.define("Account", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  domain: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   registration: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -84,6 +104,14 @@ const Account = sequelize.define("Account", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  re_email:{
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  re_phone: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
 });
 const Token = sequelize.define("Token", {
     token: {
@@ -113,7 +141,7 @@ const Domain = sequelize.define("Domain", {
     allowNull: false,
   }
 })
-//sequelize.sync();
+sequelize.sync();
 module.exports = {
     Reseller: Reseller,
     License: License,
